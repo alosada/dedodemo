@@ -1,0 +1,4 @@
+<%=content_tag(:span, "#{@menu[:name]}",style: "display:none", id:"dedodrop-primary")%>
+<%=content_tag(:span, "#{@menu[:has_many]}",style: "display:none", id:"dedodrop-secondary")%>
+<%= select_tag @menu[:name], options_for_select(@menu[:parents]) %><br>
+<%= select_tag @menu[:has_many], options_for_select(@menu[:children]), disabled: true %><br>

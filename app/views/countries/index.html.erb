@@ -1,0 +1,12 @@
+<h1>Dependent DropDown</h1>
+<%= form_tag do%>
+	<%= render partial: "shared/dedodrop", menu: @menu %>
+<%end%>
+<div>
+	<% @countries.each do |c|%>
+		<br><%= "#{c.name} is composed of the following:"%><br><br>
+		<% c.states.each do |s| %>
+			<%= ".- " + s.name %><br>
+		<%end%>
+	<%end%>
+</div>
